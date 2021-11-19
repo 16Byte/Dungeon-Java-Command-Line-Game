@@ -1,15 +1,12 @@
 import java.util.*;
 
 public class RoomGenerator {
-
-	public static void main(String[] args) {
-		
-	}
 	
 	public RoomGenerator() {
-		System.out.println("RoomGenerator has been piped to run");
+		//System.out.println("RoomGenerator has been piped");
 	}
 	
+	//Room Creator
 	public RoomGenerator(String typeOfRoom, int boardSizeX, int boardSizeY) {
 		GenerateRoom(typeOfRoom, boardSizeX, boardSizeY);
 	}
@@ -17,55 +14,10 @@ public class RoomGenerator {
 	public int[][] gameBoard;
 	
 	public void GenerateRoom(String typeOfRoom, int boardSizeX, int boardSizeY) {
+		//Call Room Class and Create a New Room Based On typeOfRoom.
 		gameBoard = new int[boardSizeX][boardSizeY];
-		
 		Map<String, Room> rooms = new HashMap<>();
-
-		rooms.put(typeOfRoom, new Room(typeOfRoom, boardSizeX, boardSizeY));
-
-		/*
-		if(typeOfRoom.equals("start")) { //start -- safe
-			rooms.put(typeOfRoom, new Room(typeOfRoom));
-			
-		} 
-		else if(typeOfRoom.equals("empty")) { //empty -- safe
-			
-			
-		} 
-		else if(typeOfRoom.equals("sword")) { //sword -- safe
-			
-			
-		} 
-		else if(typeOfRoom.equals("lm3")) { //lesser monsters only level 3
-			
-			
-		}
-		else if(typeOfRoom.equals("lm34")) { //lesser monsters levels 3-4
-			
-			
-		} 
-		else if(typeOfRoom.equals("shield")) { //shield room with lesser monsters levels 3-4
-			
-			
-		} 
-		else if(typeOfRoom.equals("key")) { //key room with lesser monsters level 4 only
-			
-			
-		}
-		else if(typeOfRoom.equals("prep")) { //prep room for dragon fight -- safe
-			
-			
-		} 
-		else if(typeOfRoom.equals("dragon")) { //dragon room with lesser monsters levels 4-5
-			
-			
-		}
-		*/
-		for(int x = 0; x < gameBoard.length; x++) {
-			for(int y = 0; y < gameBoard.length; y++) {
-				gameBoard[x][y] = 0;
-			}//end y loop
-		}//end x loop
+		rooms.put(typeOfRoom, new Room(typeOfRoom, boardSizeX, boardSizeY, gameBoard));
 	}
 	
 	public void DrawRoom() {
@@ -79,8 +31,41 @@ public class RoomGenerator {
 		}//end x loop
 	}
 	
-	public void MovePlayer(int newX, int newY, String typeOfRoom) {
+	public void RoomSwitch(Room curRoom, Room nextRoom) {
 		
+	}
+	
+	public void Movement(int curPosX, int curPosY, String intendedDirection) {
+		
+		int newX;
+		int newY;
+		
+		if(intendedDirection.equals("w") || intendedDirection.equals("W") ) { //up
+			//TODO: Create a block that moves the position of the player when triggered then updates the board
+			System.out.println(curPosX + " " + curPosY + " " + intendedDirection);
+		} 
+		else if(intendedDirection.equals("a") || intendedDirection.equals("A")) { //left
+			//TODO: Create a block that moves the position of the player when triggered then updates the board
+			System.out.println(curPosX + " " + curPosY + " " + intendedDirection);
+		} 
+		else if(intendedDirection.equals("s") || intendedDirection.equals("S")) { //down
+			//TODO: Create a block that moves the position of the player when triggered then updates the board
+			System.out.println(curPosX + " " + curPosY + " " + intendedDirection);
+			
+		} 
+		else if(intendedDirection.equals("d") || intendedDirection.equals("D")) { //right
+			
+			//TODO: Create a block that moves the position of the player when triggered then updates the board
+			System.out.println(curPosX + " " + curPosY + " " + intendedDirection);
+		}
+		
+		
+	}
+	
+	public void ClearSc(int targetNumber) {
+		for(int i = 0; i < targetNumber; i++) {
+			System.out.println();
+		}
 	}
 	
 	

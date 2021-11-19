@@ -3,14 +3,23 @@ import java.util.*;
 //This class is meant to add a player and include all movement and interaction methods
 
 //THIS METHOD SHOULD INCLUDE EVERYTHING THE PLAYER IS CAPABLE OF AS WELL AS FUNCTIONALITY AND THEN BE EXECUTABLE TO AFFECT THE PLAYER INSTANTIATION THROUGH THE RUN PROGRAM
-//EACH PLAYER THAT IS INSTANTIATED (REAL WORLD SCENERIO NOT IN MIND) EACH PLAYER THAT IS INSTANTIATED SHOULD BE CONTROLLED ALL AT THE SAME TIME AND HAVE THEIR OWN EFFECTS APPLIED TO THEM.
+//EACH PLAYER THAT IS INSTANTIATED (REAL WORLD SCENERIO NOT IN MIND) SHOULD BE CONTROLLED ALL AT THE SAME TIME AND HAVE THEIR OWN EFFECTS APPLIED TO THEM.
 //MULTIPLAYER IN 2.0
 public class Player {
 	
 	Scanner user = new Scanner(System.in);
 	RoomGenerator roomGen = new RoomGenerator();
 	
-	public static void main(String[] args) {
+	String name = "Steve";//default name
+	String gend = "other";//default gend
+	
+	int maxPlayerHP = 10;
+	int minPlayerHP = 0;
+	int playerHP = 10;
+	
+	int shieldDamageBuff = 2;
+	
+	public void Player() {
 		//initialization
 		
 		
@@ -18,7 +27,27 @@ public class Player {
 	
 	public void InitializePlayer(int startLocX, int startLocY) {
 		
-		PreMovement(startLocX, startLocY);
+		//PreMovement(startLocX, startLocY);
+	}
+	
+	public String setPlayerName() {
+		name = user.nextLine();
+		return name;
+	}
+	
+	public String getPlayerName() {
+		String playerName = name;
+		return name;
+	}
+	
+	public String setPlayerGend() {
+		//an attempt to bring a pokemon-style gameplay "Now tell me. Are you a boy? Or are you a girl?" -Professor Oak, September 28, 1998
+		gend = user.nextLine();
+		return gend;
+	}
+	
+	public String getPlayerGend() {
+		return gend;
 	}
 	
 	public void PreMovement(int curPosX, int curPosY) {
@@ -88,6 +117,34 @@ public class Player {
 	
 	public void FightDragon() {
 		
+	}
+	
+	public void playerWinASCII() {
+		System.out.println();
+		System.out.println("          _______                     _________ _        _ ");
+		System.out.println("|\\     /|(  ___  )|\\     /|  |\\     /|\\__   __/( (    /|( )");
+		System.out.println("( \\   / )| (   ) || )   ( |  | )   ( |   ) (   |  \\  ( || |");
+		System.out.println(" \\ (_) / | |   | || |   | |  | | _ | |   | |   |   \\ | || |");
+		System.out.println("  \\   /  | |   | || |   | |  | |( )| |   | |   | (\\ \\) || |");
+		System.out.println("   ) (   | |   | || |   | |  | || || |   | |   | | \\   |(_)");
+		System.out.println("   | |   | (___) || (___) |  | () () |___) (___| )  \\  | _ ");
+		System.out.println("   \\_/   (_______)(_______)  (_______)\\_______/|/    )_)(_)");
+		System.out.println("                                                           ");
+		System.out.println();
+	}
+	
+	public void playerDeathASCII() {
+		System.out.println();
+		System.out.println("          _______             ______  _________ _______  ______   _ ");
+		System.out.println("|\\     /|(  ___  )|\\     /|  (  __  \\ \\__   __/(  ____ \\(  __  \\ ( )");
+		System.out.println("( \\   / )| (   ) || )   ( |  | (  \\  )   ) (   | (    \\/| (  \\  )| |");
+		System.out.println(" \\ (_) / | |   | || |   | |  | |   ) |   | |   | (__    | |   ) || |");
+		System.out.println("  \\   /  | |   | || |   | |  | |   | |   | |   |  __)   | |   | || |");
+		System.out.println("   ) (   | |   | || |   | |  | |   ) |   | |   | (      | |   ) |(_)");
+		System.out.println("   | |   | (___) || (___) |  | (__/  )___) (___| (____/\\| (__/  ) _ ");
+		System.out.println("   \\_/   (_______)(_______)  (______/ \\_______/(_______/(______/ (_)");
+		System.out.println("                                                                    ");
+		System.out.println();
 	}
 	
 }
