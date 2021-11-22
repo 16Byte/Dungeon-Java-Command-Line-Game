@@ -55,7 +55,7 @@ public class run {
 		IntroScene(roomGen, p1);
 		
 			//Create GameHandler
-		GameHandler gh = new GameHandler();
+		GameHandler gh = new GameHandler(DungeonRoom, EmptyRoom, SwordRoom, LM3Room, LM34Room, ShieldRoom, KeyRoom, PrepRoom, DragonRoom, roomGen, p1);
 		
 		/*
 			game running using GameHandler class at this point
@@ -64,7 +64,7 @@ public class run {
 		*/
 		
 		
-		
+		//EndingSquence(gh, p1);
 		
 		
 		
@@ -73,13 +73,14 @@ public class run {
 		
 
 		//end game
-		//Credits(DungeonRoom, EmptyRoom, SwordRoom, LM3Room, LM34Room, ShieldRoom, KeyRoom, PrepRoom, DragonRoom, roomGen, p1);
+		delay(5);
+		Credits(DungeonRoom, EmptyRoom, SwordRoom, LM3Room, LM34Room, ShieldRoom, KeyRoom, PrepRoom, DragonRoom, roomGen, p1);
     }
 	
 
 	public static void Credits(	RoomGenerator DungeonRoom, RoomGenerator EmptyRoom, RoomGenerator SwordRoom, RoomGenerator LM3Room, RoomGenerator LM34Room, 
 								RoomGenerator ShieldRoom, RoomGenerator KeyRoom, RoomGenerator PrepRoom, RoomGenerator DragonRoom, RoomGenerator roomGen, Player p1	) {
-		int clsSpacing = 50;
+		int clsSpacing = 100;
 		roomGen.ClearSc(clsSpacing);
 		DungeonRoom.DrawRoom();
 		System.out.println("Starting Room");
@@ -102,8 +103,6 @@ public class run {
 		
 		System.out.println();
 		System.out.println();
-		p1.playerDeathASCII();
-		p1.playerWinASCII();
 		System.out.println();
 		System.out.println();
 		System.out.println("Made By: Diego Jimenez for CS 1301.");
@@ -175,7 +174,7 @@ public class run {
 		System.out.println("Old Man: They'll help you out in the long run, unless you're insane.");
 		delay(6);
 		printGameGuide();
-		delay(10);
+		delay(15);
 		System.out.println("Game Starting in...");
 		delay(1);
 		System.out.println("3");
@@ -189,24 +188,36 @@ public class run {
 	}
 	
 	public static void printGameGuide() {
+		System.out.println();
 		System.out.println("Game Guide:");
 		System.out.println("	Controls:");
-		System.out.println("	W = move up");
-		System.out.println("	A = move left");
-		System.out.println("	S = move down");
-		System.out.println("	D = move right");
-		System.out.println("	I = interact with object");
+		System.out.println("		W = Move up");
+		System.out.println("		A = Move left");
+		System.out.println("		S = Move down");
+		System.out.println("		D = Move right");
 		System.out.println();
 		System.out.println("	Interface Guide:");
-		System.out.println("	0 = air");
-		System.out.println("	1 = player");
-		System.out.println("	2 = sword");
-		System.out.println("	3 = shield");
-		System.out.println("	4-6 = Monsters of varying levels 4 = easiest, 6 = hardest");
-		System.out.println("	7 = door");
-		System.out.println("	9 = Dragon");
+		System.out.println("		0 = Air");
+		System.out.println("		1 = Player");
+		System.out.println("		2 = Sword");
+		System.out.println("		3 = Shield");
+		System.out.println("		4-6 = Monsters of varying levels 4 = easiest, 6 = hardest");
+		System.out.println("		7 = Door");
+		System.out.println("		8 = Item");
+		System.out.println("		9 = Dragon");
+		System.out.println();
 		System.out.println("Do not worry about having to memorize this, there will be a menu");
 		System.out.println("option to bring back up the game guide whenever you need a refresher!");
+		System.out.println();
+	}
+	
+	public static void EndingSquence(GameHandler gh, Player p1) {
+		
+		if(gh.BeatGame()) {
+			p1.playerWinASCII();
+		} else if(!gh.BeatGame()) {
+			p1.playerDeathASCII();
+		}
 		System.out.println();
 	}
 	

@@ -15,7 +15,17 @@ public class Player {
 	
 	int maxPlayerHP = 10;
 	int minPlayerHP = 0;
-	int playerHP = 10;
+	int playerHP = 100;
+	
+	int lesserMonsterAPLV4 = 20;
+	int lesserMonsterAPLV5 = 20;
+	int lesserMonsterAPLV6 = 20;
+	
+	int startPosX = 0;
+	int startPosY = 0;
+	
+	int curPosX = 0;
+	int curPosY = 0;
 	
 	int shieldDamageBuff = 2;
 	

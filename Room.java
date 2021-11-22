@@ -1,9 +1,6 @@
 import java.util.*;
 
 public class Room {
-	public static void main(String[] args) {
-		
-	}
 	
 	public Room() {
 		System.out.println("Room.java has been piped to RoomGenerator in Run.java");
@@ -22,7 +19,6 @@ public class Room {
 			}//end x loop
 		} 
 		else if(typeOfRoom.equals("empty")) { //empty -- safe
-			
 			for(int x = 0; x < gameBoard.length; x++) {
 				for(int y = 0; y < gameBoard.length; y++) {
 					gameBoard[x][y] = 1;
@@ -30,7 +26,6 @@ public class Room {
 			}//end x loop
 		} 
 		else if(typeOfRoom.equals("sword")) { //sword -- safe
-			
 			for(int x = 0; x < gameBoard.length; x++) {
 				for(int y = 0; y < gameBoard.length; y++) {
 					gameBoard[x][y] = 2;
@@ -38,7 +33,6 @@ public class Room {
 			}//end x loop
 		} 
 		else if(typeOfRoom.equals("lm3")) { //lesser monsters only level 3
-			
 			for(int x = 0; x < gameBoard.length; x++) {
 				for(int y = 0; y < gameBoard.length; y++) {
 					gameBoard[x][y] = 3;
@@ -46,7 +40,6 @@ public class Room {
 			}//end x loop
 		}
 		else if(typeOfRoom.equals("lm34")) { //lesser monsters levels 3-4
-			
 			for(int x = 0; x < gameBoard.length; x++) {
 				for(int y = 0; y < gameBoard.length; y++) {
 					gameBoard[x][y] = 4;
@@ -54,7 +47,6 @@ public class Room {
 			}//end x loop
 		} 
 		else if(typeOfRoom.equals("shield")) { //shield room with lesser monsters levels 3-4
-			
 			for(int x = 0; x < gameBoard.length; x++) {
 				for(int y = 0; y < gameBoard.length; y++) {
 					gameBoard[x][y] = 5;
@@ -62,7 +54,6 @@ public class Room {
 			}//end x loop
 		} 
 		else if(typeOfRoom.equals("key")) { //key room with lesser monsters level 4 only
-			
 			for(int x = 0; x < gameBoard.length; x++) {
 				for(int y = 0; y < gameBoard.length; y++) {
 					gameBoard[x][y] = 6;
@@ -70,7 +61,6 @@ public class Room {
 			}//end x loop
 		}
 		else if(typeOfRoom.equals("prep")) { //prep room for dragon fight -- safe
-			
 			for(int x = 0; x < gameBoard.length; x++) {
 				for(int y = 0; y < gameBoard.length; y++) {
 					gameBoard[x][y] = 7;
@@ -78,7 +68,6 @@ public class Room {
 			}//end x loop
 		} 
 		else if(typeOfRoom.equals("dragon")) { //dragon room with lesser monsters levels 4-5
-			
 			for(int x = 0; x < gameBoard.length; x++) {
 				for(int y = 0; y < gameBoard.length; y++) {
 					gameBoard[x][y] = 8;
